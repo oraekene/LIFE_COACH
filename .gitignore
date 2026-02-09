@@ -124,3 +124,11 @@ browser-data
 skills/dev-browser/profiles/browser-data/
 skills/dev-browser/profiles/Default/
 skills/dev-browser/profiles/Profile */
+
+# User Exclusions
+agents/
+skills/
+.agent/
+design-system/
+life-coach-prd.json
+"LifeOS_Coach_Combined_PRD (2).md"
