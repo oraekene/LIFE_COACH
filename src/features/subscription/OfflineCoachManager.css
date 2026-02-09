@@ -1,0 +1,84 @@
+/**
+ * OfflineCoachManager Styles
+ * Story 2.2: Premium Subscription
+ */
+
+.offline-coach-manager {
+    background: var(--neutral-50, #FAF9F7);
+    border: 1px solid var(--neutral-200, #E8E4DE);
+    border-radius: var(--radius-lg, 0.75rem);
+    padding: var(--spacing-4, 1rem);
+}
+
+.updates-blocked-badge {
+    display: inline-block;
+    background: rgba(249, 168, 37, 0.1);
+    color: var(--semantic-warning, #F9A825);
+    font-size: var(--text-xs, 0.75rem);
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: var(--radius-full, 9999px);
+    margin-bottom: var(--spacing-3, 0.75rem);
+}
+
+.subscription-required {
+    font-size: var(--text-sm, 0.875rem);
+    color: var(--neutral-500, #7D7468);
+    margin: 0 0 var(--spacing-3, 0.75rem) 0;
+}
+
+.last-sync {
+    font-size: var(--text-xs, 0.75rem);
+    color: var(--neutral-400, #A89F91);
+    margin-bottom: var(--spacing-3, 0.75rem);
+}
+
+.download-coach-button {
+    width: 100%;
+    background: var(--brand-primary, #2D5A4A);
+    color: white;
+    border: none;
+    padding: var(--spacing-3, 0.75rem);
+    border-radius: var(--radius-lg, 0.75rem);
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: var(--spacing-2, 0.5rem);
+}
+
+.download-coach-button:hover:not(:disabled) {
+    background: var(--brand-accent, #4A9B7F);
+}
+
+.download-coach-button:disabled {
+    background: var(--neutral-300, #D4CFC6);
+    color: var(--neutral-500, #7D7468);
+    cursor: not-allowed;
+}
+
+.delete-offline-button {
+    width: 100%;
+    background: transparent;
+    color: var(--semantic-error, #D93025);
+    border: 1px solid var(--semantic-error, #D93025);
+    padding: var(--spacing-2, 0.5rem);
+    border-radius: var(--radius-md, 0.5rem);
+    font-size: var(--text-xs, 0.75rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.delete-offline-button:hover {
+    background: rgba(217, 48, 37, 0.1);
+}
+
+.error-message {
+    background: rgba(217, 48, 37, 0.1);
+    color: var(--semantic-error, #D93025);
+    font-size: var(--text-sm, 0.875rem);
+    padding: var(--spacing-3, 0.75rem);
+    border-radius: var(--radius-md, 0.5rem);
+    margin-top: var(--spacing-3, 0.75rem);
+}

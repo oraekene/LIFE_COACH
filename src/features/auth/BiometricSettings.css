@@ -1,0 +1,182 @@
+/**
+ * BiometricSettings Styles
+ * Story 1.1: User Registration - AC4
+ */
+
+.biometric-settings {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.biometric-settings--unsupported {
+    text-align: center;
+    padding: var(--space-6, 1.5rem);
+    background: var(--neutral-100, #F3F1ED);
+    border-radius: var(--radius-lg, 0.75rem);
+}
+
+.biometric-settings__icon {
+    font-size: 48px;
+    margin-bottom: var(--space-4, 1rem);
+}
+
+.biometric-settings__notice {
+    font-size: var(--text-base, 1rem);
+    color: var(--neutral-700, #403B34);
+    margin: 0 0 var(--space-2, 0.5rem);
+}
+
+.biometric-settings__hint {
+    font-size: var(--text-sm, 0.875rem);
+    color: var(--neutral-500, #7D7468);
+    margin: 0;
+}
+
+/* Setup Prompt */
+.biometric-settings__prompt {
+    text-align: center;
+    padding: var(--space-8, 2rem) var(--space-6, 1.5rem);
+    background: linear-gradient(135deg, rgba(45, 90, 74, 0.05), rgba(74, 155, 127, 0.1));
+    border-radius: var(--radius-xl, 1rem);
+    margin-bottom: var(--space-6, 1.5rem);
+}
+
+.biometric-settings__prompt-icon {
+    font-size: 64px;
+    margin-bottom: var(--space-4, 1rem);
+}
+
+.biometric-settings__prompt-title {
+    font-family: var(--font-display, 'Outfit', sans-serif);
+    font-size: var(--text-xl, 1.25rem);
+    font-weight: 600;
+    color: var(--neutral-800, #2A2722);
+    margin: 0 0 var(--space-2, 0.5rem);
+}
+
+.biometric-settings__prompt-description {
+    font-size: var(--text-base, 1rem);
+    color: var(--neutral-600, #5C554B);
+    margin: 0 0 var(--space-6, 1.5rem);
+}
+
+.biometric-settings__enable-button {
+    padding: var(--space-3, 0.75rem) var(--space-8, 2rem);
+    background: var(--brand-primary, #2D5A4A);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md, 0.5rem);
+    font-size: var(--text-base, 1rem);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--duration-fast, 150ms) var(--ease-default, ease-out);
+}
+
+.biometric-settings__enable-button:hover {
+    background: #3D6A5A;
+    transform: translateY(-1px);
+}
+
+/* Toggle Container */
+.biometric-settings__toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-4, 1rem);
+    background: white;
+    border: 1px solid var(--neutral-200, #E8E4DE);
+    border-radius: var(--radius-lg, 0.75rem);
+}
+
+.biometric-settings__toggle-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3, 0.75rem);
+}
+
+.biometric-settings__toggle-icon {
+    font-size: 24px;
+}
+
+.biometric-settings__toggle-label {
+    display: block;
+    font-weight: 500;
+    color: var(--neutral-800, #2A2722);
+}
+
+.biometric-settings__toggle-description {
+    display: block;
+    font-size: var(--text-sm, 0.875rem);
+    color: var(--neutral-500, #7D7468);
+}
+
+/* Toggle Switch */
+.biometric-settings__switch {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 28px;
+}
+
+.biometric-settings__switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.biometric-settings__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--neutral-300, #D4CFC6);
+    transition: all var(--duration-fast, 150ms) var(--ease-default, ease-out);
+    border-radius: 28px;
+}
+
+.biometric-settings__slider::before {
+    position: absolute;
+    content: '';
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: all var(--duration-fast, 150ms) var(--ease-default, ease-out);
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.biometric-settings__switch input:checked+.biometric-settings__slider {
+    background-color: var(--brand-primary, #2D5A4A);
+}
+
+.biometric-settings__switch input:checked+.biometric-settings__slider::before {
+    transform: translateX(24px);
+}
+
+.biometric-settings__switch input:focus-visible+.biometric-settings__slider {
+    box-shadow: var(--glow-primary, 0 0 0 3px rgba(45, 90, 74, 0.2));
+}
+
+/* Status */
+.biometric-settings__status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2, 0.5rem);
+    margin-top: var(--space-4, 1rem);
+    padding: var(--space-3, 0.75rem);
+    background: rgba(52, 168, 83, 0.1);
+    border-radius: var(--radius-md, 0.5rem);
+    color: var(--success, #34A853);
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: 500;
+}
+
+.biometric-settings__status-icon {
+    font-size: 16px;
+}

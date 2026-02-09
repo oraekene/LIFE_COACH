@@ -1,0 +1,175 @@
+/**
+ * Dashboard Styles
+ * Story 2.1: Browse Coaches
+ */
+
+.dashboard {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard__nav {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    padding: 0 var(--space-6);
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    height: 64px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.brand-icon {
+    font-size: 1.5rem;
+}
+
+.brand-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav__tabs {
+    display: flex;
+    list-style: none;
+    gap: var(--space-1);
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav__tab {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nav__tab:hover {
+    background: var(--color-background);
+    color: var(--color-text-primary);
+}
+
+.nav__tab--active {
+    background: #EEF2FF;
+    color: var(--color-primary);
+}
+
+.tab-icon {
+    font-size: 1.125rem;
+}
+
+.nav__logout {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nav__logout:hover {
+    border-color: #DC2626;
+    color: #DC2626;
+}
+
+.dashboard__content {
+    flex: 1;
+    background: var(--color-background);
+}
+
+.placeholder-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    text-align: center;
+    color: var(--color-text-secondary);
+}
+
+.placeholder-view h2 {
+    font-size: 2rem;
+    margin-bottom: var(--space-2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard__nav {
+        padding: 0 var(--space-4);
+        gap: var(--space-4);
+    }
+
+    .brand-text {
+        display: none;
+    }
+
+    .tab-text {
+        display: none;
+    }
+
+    .nav__logout span:last-child {
+        display: none;
+    }
+}
+
+/* Chat Layout with PARA Sidebar - Story 3.2 */
+.chat-layout {
+    display: flex;
+    height: calc(100vh - 64px);
+    gap: 0;
+}
+
+.chat-layout .para-sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    border-right: 1px solid var(--color-border);
+    padding: var(--space-4);
+    overflow-y: auto;
+    background: var(--color-surface);
+}
+
+.chat-layout .chat-interface {
+    flex: 1;
+    min-width: 0;
+}
+
+@media (max-width: 768px) {
+    .chat-layout {
+        flex-direction: column;
+    }
+
+    .chat-layout .para-sidebar {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+    }
+}

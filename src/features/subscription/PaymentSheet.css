@@ -1,0 +1,202 @@
+/**
+ * PaymentSheet Styles
+ * Story 2.2: Premium Subscription
+ */
+
+.payment-sheet {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.payment-sheet-content {
+    background: white;
+    border-radius: var(--radius-xl, 1rem);
+    padding: var(--spacing-6, 1.5rem);
+    max-width: 420px;
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.payment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-4, 1rem);
+}
+
+.payment-header h3 {
+    font-family: var(--font-display, 'Outfit', sans-serif);
+    font-size: var(--text-xl, 1.25rem);
+    font-weight: 600;
+    color: var(--neutral-900, #1A1815);
+    margin: 0;
+}
+
+.close-button {
+    width: 32px;
+    height: 32px;
+    background: var(--neutral-100, #F3F1ED);
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--neutral-500, #7D7468);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-button:hover {
+    background: var(--neutral-200, #E8E4DE);
+}
+
+.plan-summary {
+    text-align: center;
+    padding: var(--spacing-4, 1rem);
+    background: rgba(45, 90, 74, 0.05);
+    border-radius: var(--radius-lg, 0.75rem);
+    margin-bottom: var(--spacing-4, 1rem);
+}
+
+.plan-summary .plan-name {
+    font-size: var(--text-sm, 0.875rem);
+    color: var(--neutral-600, #5C554B);
+    margin-bottom: var(--spacing-1, 0.25rem);
+}
+
+.plan-summary .plan-price {
+    font-family: var(--font-display, 'Outfit', sans-serif);
+    font-size: var(--text-3xl, 1.875rem);
+    font-weight: 700;
+    color: var(--brand-primary, #2D5A4A);
+}
+
+.plan-summary .price-period {
+    font-size: var(--text-base, 1rem);
+    font-weight: 400;
+    color: var(--neutral-500, #7D7468);
+}
+
+.payment-features {
+    margin-bottom: var(--spacing-4, 1rem);
+}
+
+.payment-features h4 {
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: 600;
+    color: var(--neutral-600, #5C554B);
+    margin: 0 0 var(--spacing-2, 0.5rem) 0;
+}
+
+.payment-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.payment-features li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2, 0.5rem);
+    font-size: var(--text-sm, 0.875rem);
+    color: var(--neutral-700, #403B34);
+    padding: var(--spacing-1, 0.25rem) 0;
+}
+
+.payment-features .check {
+    color: var(--semantic-success, #34A853);
+}
+
+.loading-payment {
+    text-align: center;
+    padding: var(--spacing-6, 1.5rem);
+    color: var(--neutral-500, #7D7468);
+}
+
+.payment-form {
+    margin-bottom: var(--spacing-4, 1rem);
+}
+
+.card-element-placeholder {
+    background: var(--neutral-50, #FAF9F7);
+    border: 1px solid var(--neutral-200, #E8E4DE);
+    border-radius: var(--radius-md, 0.5rem);
+    padding: var(--spacing-4, 1rem);
+}
+
+.mock-card-input {
+    font-family: var(--font-mono, 'JetBrains Mono', monospace);
+    font-size: var(--text-sm, 0.875rem);
+    color: var(--neutral-600, #5C554B);
+}
+
+.payment-error {
+    background: rgba(217, 48, 37, 0.1);
+    color: var(--semantic-error, #D93025);
+    font-size: var(--text-sm, 0.875rem);
+    padding: var(--spacing-3, 0.75rem);
+    border-radius: var(--radius-md, 0.5rem);
+    margin-bottom: var(--spacing-4, 1rem);
+    text-align: center;
+}
+
+.confirm-payment-button {
+    width: 100%;
+    background: var(--brand-primary, #2D5A4A);
+    color: white;
+    border: none;
+    padding: var(--spacing-4, 1rem);
+    border-radius: var(--radius-lg, 0.75rem);
+    font-size: var(--text-base, 1rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: var(--spacing-3, 0.75rem);
+}
+
+.confirm-payment-button:hover:not(:disabled) {
+    background: var(--brand-accent, #4A9B7F);
+}
+
+.confirm-payment-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.restore-purchases-button {
+    width: 100%;
+    background: transparent;
+    color: var(--brand-primary, #2D5A4A);
+    border: none;
+    padding: var(--spacing-2, 0.5rem);
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: var(--spacing-3, 0.75rem);
+}
+
+.restore-purchases-button:hover {
+    text-decoration: underline;
+}
+
+.restore-purchases-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.payment-terms {
+    font-size: var(--text-xs, 0.75rem);
+    color: var(--neutral-400, #A89F91);
+    text-align: center;
+    margin: 0;
+    line-height: 1.5;
+}

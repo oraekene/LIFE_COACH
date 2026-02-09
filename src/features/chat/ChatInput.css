@@ -1,0 +1,39 @@
+.chat-input-container {
+    display: flex;
+    align-items: flex-end;
+    background-color: #fff;
+    border-top: 1px solid #e0e0e0;
+    padding: 10px;
+    gap: 10px;
+    position: relative;
+    /* For popup positioning */
+}
+
+.mention-suggestions {
+    position: absolute;
+    bottom: 100%;
+    left: 10px;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.mention-suggestion-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.mention-suggestion-item:hover {
+    background-color: #f5f5f5;
+}
+
+.chat-input__textarea {
+    /* Style ensures it matches the CSS import */
+    display: block;
+}

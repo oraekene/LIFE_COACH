@@ -1,0 +1,255 @@
+/**
+ * RegistrationFlow Styles
+ * Story 1.1: User Registration
+ */
+
+.registration-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: var(--space-8, 2rem);
+}
+
+.registration-flow__header {
+    text-align: center;
+    margin-bottom: var(--space-8, 2rem);
+}
+
+.registration-flow__title {
+    font-family: var(--font-display, 'Outfit', sans-serif);
+    font-size: var(--text-4xl, 2.25rem);
+    font-weight: 600;
+    color: var(--brand-primary, #2D5A4A);
+    margin: 0 0 var(--space-2, 0.5rem);
+}
+
+.registration-flow__subtitle {
+    font-size: var(--text-lg, 1.125rem);
+    color: var(--neutral-600, #5C554B);
+    margin: 0;
+}
+
+.registration-flow__loading {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3, 0.75rem);
+    padding: var(--space-4, 1rem);
+    background: var(--neutral-100, #F3F1ED);
+    border-radius: var(--radius-md, 0.5rem);
+    margin-bottom: var(--space-4, 1rem);
+    width: 100%;
+    justify-content: center;
+}
+
+.registration-flow__spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--neutral-300, #D4CFC6);
+    border-top-color: var(--brand-primary, #2D5A4A);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.registration-flow__error {
+    padding: var(--space-4, 1rem);
+    background: rgba(217, 48, 37, 0.1);
+    border: 1px solid var(--error, #D93025);
+    border-radius: var(--radius-md, 0.5rem);
+    color: var(--error, #D93025);
+    margin-bottom: var(--space-4, 1rem);
+    width: 100%;
+    text-align: center;
+}
+
+.registration-flow__success {
+    padding: var(--space-4, 1rem);
+    background: rgba(52, 168, 83, 0.1);
+    border: 1px solid var(--success, #34A853);
+    border-radius: var(--radius-md, 0.5rem);
+    color: var(--success, #34A853);
+    margin-bottom: var(--space-4, 1rem);
+    width: 100%;
+    text-align: center;
+}
+
+.registration-flow__oauth-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3, 0.75rem);
+    width: 100%;
+}
+
+.registration-flow__oauth-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3, 0.75rem);
+    width: 100%;
+    height: var(--btn-height-lg, 48px);
+    padding: var(--space-3, 0.75rem) var(--space-6, 1.5rem);
+    border-radius: var(--radius-md, 0.5rem);
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-size: var(--text-base, 1rem);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--duration-fast, 150ms) var(--ease-default, ease-out);
+    border: 1.5px solid var(--neutral-300, #D4CFC6);
+    background: white;
+    color: var(--neutral-800, #2A2722);
+}
+
+.registration-flow__oauth-button:hover:not(:disabled) {
+    border-color: var(--neutral-400, #A89F91);
+    box-shadow: var(--shadow-sm, 0 1px 2px rgba(26, 24, 21, 0.05));
+}
+
+.registration-flow__oauth-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.registration-flow__oauth-button--apple {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.registration-flow__oauth-button--apple:hover:not(:disabled) {
+    background: #222;
+}
+
+.registration-flow__oauth-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.registration-flow__divider {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: var(--space-6, 1.5rem) 0;
+    color: var(--neutral-400, #A89F91);
+    font-size: var(--text-sm, 0.875rem);
+}
+
+.registration-flow__divider::before,
+.registration-flow__divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--neutral-200, #E8E4DE);
+}
+
+.registration-flow__divider span {
+    padding: 0 var(--space-4, 1rem);
+}
+
+.registration-flow__email-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4, 1rem);
+}
+
+.registration-flow__input-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2, 0.5rem);
+}
+
+.registration-flow__label {
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: 500;
+    color: var(--neutral-700, #403B34);
+}
+
+.registration-flow__input {
+    width: 100%;
+    height: var(--input-height, 44px);
+    padding: var(--space-3, 0.75rem) var(--space-4, 1rem);
+    border: 1.5px solid var(--neutral-300, #D4CFC6);
+    border-radius: var(--radius-md, 0.5rem);
+    background: var(--neutral-50, #FAF9F7);
+    font-size: var(--text-base, 1rem);
+    color: var(--neutral-800, #2A2722);
+    transition: all var(--duration-fast, 150ms) var(--ease-default, ease-out);
+}
+
+.registration-flow__input:focus {
+    outline: none;
+    border-color: var(--brand-primary, #2D5A4A);
+    background: white;
+    box-shadow: var(--glow-primary, 0 0 0 3px rgba(45, 90, 74, 0.2));
+}
+
+.registration-flow__input--error {
+    border-color: var(--error, #D93025);
+}
+
+.registration-flow__input--error:focus {
+    box-shadow: var(--glow-error, 0 0 0 3px rgba(217, 48, 37, 0.2));
+}
+
+.registration-flow__input::placeholder {
+    color: var(--neutral-400, #A89F91);
+}
+
+.registration-flow__input-error {
+    font-size: var(--text-sm, 0.875rem);
+    color: var(--error, #D93025);
+    margin: 0;
+}
+
+.registration-flow__magic-link-button {
+    width: 100%;
+    height: var(--btn-height-lg, 48px);
+    padding: var(--space-3, 0.75rem) var(--space-6, 1.5rem);
+    background: var(--brand-primary, #2D5A4A);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md, 0.5rem);
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-size: var(--text-base, 1rem);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--duration-fast, 150ms) var(--ease-default, ease-out);
+}
+
+.registration-flow__magic-link-button:hover:not(:disabled) {
+    background: #3D6A5A;
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+}
+
+.registration-flow__magic-link-button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.registration-flow__magic-link-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.registration-flow__terms {
+    font-size: var(--text-xs, 0.75rem);
+    color: var(--neutral-500, #7D7468);
+    text-align: center;
+    margin-top: var(--space-6, 1.5rem);
+}
+
+.registration-flow__terms a {
+    color: var(--brand-primary, #2D5A4A);
+    text-decoration: underline;
+}
+
+.registration-flow__terms a:hover {
+    text-decoration: none;
+}

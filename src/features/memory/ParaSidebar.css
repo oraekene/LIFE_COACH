@@ -1,0 +1,42 @@
+.para-sidebar {
+    width: 250px;
+    background-color: #f5f5f5;
+    padding: 1rem;
+    height: 100%;
+    border-right: 1px solid #e0e0e0;
+}
+
+.para-category {
+    margin-bottom: 2rem;
+}
+
+.para-category h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.para-item {
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.para-item--hot {
+    background-color: rgba(255, 87, 34, 0.1);
+    /* Hot memory tint */
+    border-left: 3px solid #ff5722;
+}
+
+.para-name {
+    font-weight: 500;
+}
+
+.para-relation {
+    font-size: 0.8rem;
+    color: #888;
+}

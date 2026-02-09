@@ -1,0 +1,103 @@
+/**
+ * CoachList Styles
+ * Story 2.1: Browse Coaches
+ */
+
+.coach-list {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-6);
+}
+
+.coach-list__header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+}
+
+.coach-list__title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-2);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.coach-list__subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.coach-list__count {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-4);
+}
+
+.coach-list__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--space-6);
+}
+
+.coach-list__loading,
+.coach-list__error,
+.coach-list__empty {
+    text-align: center;
+    padding: var(--space-12);
+    color: var(--color-text-secondary);
+}
+
+.coach-list__loading .loading-spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid var(--color-border);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto var(--space-4);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.coach-list__error {
+    color: #DC2626;
+}
+
+.coach-list__error button,
+.coach-list__empty button {
+    margin-top: var(--space-4);
+    padding: var(--space-2) var(--space-4);
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+}
+
+.coach-list__error button:hover,
+.coach-list__empty button:hover {
+    background: var(--color-primary-dark);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .coach-list {
+        padding: var(--space-4);
+    }
+
+    .coach-list__title {
+        font-size: 1.75rem;
+    }
+
+    .coach-list__grid {
+        grid-template-columns: 1fr;
+    }
+}

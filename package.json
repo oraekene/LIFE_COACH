@@ -1,0 +1,37 @@
+{
+    "name": "lifeos-coach",
+    "private": true,
+    "version": "0.1.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview",
+        "test": "vitest",
+        "test:run": "vitest run",
+        "test:ui": "vitest --ui",
+        "test:coverage": "vitest run --coverage"
+    },
+    "dependencies": {
+        "@clerk/clerk-react": "^5.0.0",
+        "@types/dompurify": "^3.0.5",
+        "@types/uuid": "^10.0.0",
+        "dompurify": "^3.3.1",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "uuid": "^13.0.0",
+        "wa-sqlite": "^1.0.0"
+    },
+    "devDependencies": {
+        "@testing-library/jest-dom": "^6.4.2",
+        "@testing-library/react": "^14.2.1",
+        "@testing-library/user-event": "^14.5.2",
+        "@types/react": "^18.3.1",
+        "@types/react-dom": "^18.3.0",
+        "@vitejs/plugin-react": "^4.2.1",
+        "jsdom": "^24.0.0",
+        "typescript": "^5.4.2",
+        "vite": "^5.2.8",
+        "vitest": "^1.4.0"
+    }
+}
