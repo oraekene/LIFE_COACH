@@ -1,114 +1,289 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /**
- * Global styles and CSS reset
+ * LifeOS Coach Design Tokens
+ * Version: 1.0
+ * Auto-generated from design_system.md
  */
 
-:root {
-    /* Design System Colors */
-    --color-primary: #6366F1;
-    --color-primary-light: #818CF8;
-    --color-primary-dark: #4F46E5;
+@layer base {
+    :root {
+        /* ========================================
+       BRAND COLORS
+       ======================================== */
+        --brand-primary: #2D5A4A;
+        --brand-secondary: #B8936A;
+        --brand-accent: #4A9B7F;
 
-    --color-secondary: #10B981;
-    --color-secondary-light: #34D399;
-    --color-secondary-dark: #059669;
+        /* ========================================
+       SEMANTIC COLORS
+       ======================================== */
+        --success: #34A853;
+        --warning: #F9A825;
+        --error: #D93025;
+        --info: #4285F4;
 
-    --color-background: #F9FAFB;
-    --color-surface: #FFFFFF;
-    --color-surface-elevated: #FFFFFF;
+        /* ========================================
+       NEUTRAL PALETTE (Warm Grays)
+       ======================================== */
+        --neutral-50: #FAF9F7;
+        --neutral-100: #F3F1ED;
+        --neutral-200: #E8E4DE;
+        --neutral-300: #D4CFC6;
+        --neutral-400: #A89F91;
+        --neutral-500: #7D7468;
+        --neutral-600: #5C554B;
+        --neutral-700: #403B34;
+        --neutral-800: #2A2722;
+        --neutral-900: #1A1815;
 
-    --color-text-primary: #111827;
-    --color-text-secondary: #6B7280;
-    --color-text-muted: #9CA3AF;
+        /* ========================================
+       SURFACE COLORS
+       ======================================== */
+        --bg-primary: var(--neutral-50);
+        --bg-secondary: white;
+        --bg-tertiary: var(--neutral-100);
+        --border-primary: var(--neutral-200);
+        --border-secondary: var(--neutral-300);
 
-    --color-border: #E5E7EB;
-    --color-border-focus: #6366F1;
+        --text-primary: var(--neutral-800);
+        --text-secondary: var(--neutral-600);
+        --text-muted: var(--neutral-400);
+        --text-inverted: white;
 
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        /* ========================================
+       TYPOGRAPHY
+       ======================================== */
+        --font-display: 'Outfit', system-ui, sans-serif;
+        --font-body: 'Inter', system-ui, sans-serif;
+        --font-mono: 'JetBrains Mono', monospace;
 
-    /* Border Radius */
-    --radius-sm: 0.375rem;
-    --radius-md: 0.5rem;
-    --radius-lg: 0.75rem;
-    --radius-xl: 1rem;
-    --radius-full: 9999px;
+        /* Font Sizes */
+        --text-xs: 0.75rem;
+        --text-sm: 0.875rem;
+        --text-base: 1rem;
+        --text-lg: 1.125rem;
+        --text-xl: 1.25rem;
+        --text-2xl: 1.5rem;
+        --text-3xl: 1.875rem;
+        --text-4xl: 2.25rem;
+        --text-5xl: 3rem;
 
-    /* Spacing */
-    --space-1: 0.25rem;
-    --space-2: 0.5rem;
-    --space-3: 0.75rem;
-    --space-4: 1rem;
-    --space-5: 1.25rem;
-    --space-6: 1.5rem;
-    --space-8: 2rem;
-    --space-10: 2.5rem;
-    --space-12: 3rem;
-}
+        /* Font Weights */
+        --font-normal: 400;
+        --font-medium: 500;
+        --font-semibold: 600;
+        --font-bold: 700;
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+        /* Line Heights */
+        --leading-none: 1;
+        --leading-tight: 1.2;
+        --leading-snug: 1.375;
+        --leading-normal: 1.5;
+        --leading-relaxed: 1.625;
 
-html {
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
+        /* Letter Spacing */
+        --tracking-tight: -0.025em;
+        --tracking-normal: 0;
+        --tracking-wide: 0.025em;
 
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: var(--color-background);
-    color: var(--color-text-primary);
-    line-height: 1.5;
+        /* ========================================
+       SPACING
+       ======================================== */
+        --space-0: 0;
+        --space-1: 0.25rem;
+        --space-2: 0.5rem;
+        --space-3: 0.75rem;
+        --space-4: 1rem;
+        --space-5: 1.25rem;
+        --space-6: 1.5rem;
+        --space-8: 2rem;
+        --space-10: 2.5rem;
+        --space-12: 3rem;
+        --space-16: 4rem;
+        --space-20: 5rem;
+
+        /* ========================================
+       BORDER RADIUS
+       ======================================== */
+        --radius-none: 0;
+        --radius-sm: 0.25rem;
+        --radius-md: 0.5rem;
+        --radius-lg: 0.75rem;
+        --radius-xl: 1rem;
+        --radius-2xl: 1.5rem;
+        --radius-full: 9999px;
+
+        /* ========================================
+       SHADOWS
+       ======================================== */
+        --shadow-sm: 0 1px 2px rgba(26, 24, 21, 0.05);
+        --shadow-md: 0 4px 6px -1px rgba(26, 24, 21, 0.07),
+            0 2px 4px -1px rgba(26, 24, 21, 0.04);
+        --shadow-lg: 0 10px 15px -3px rgba(26, 24, 21, 0.08),
+            0 4px 6px -2px rgba(26, 24, 21, 0.03);
+        --shadow-xl: 0 20px 25px -5px rgba(26, 24, 21, 0.1),
+            0 10px 10px -5px rgba(26, 24, 21, 0.02);
+        --shadow-2xl: 0 25px 50px -12px rgba(26, 24, 21, 0.15);
+        --shadow-inner: inset 0 2px 4px rgba(26, 24, 21, 0.04);
+
+        /* Focus Glows */
+        --glow-primary: 0 0 0 3px rgba(45, 90, 74, 0.2);
+        --glow-error: 0 0 0 3px rgba(217, 48, 37, 0.2);
+
+        /* ========================================
+       ANIMATION
+       ======================================== */
+        --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+        --ease-in: cubic-bezier(0.4, 0, 1, 1);
+        --ease-out: cubic-bezier(0, 0, 0.2, 1);
+        --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+        --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        --duration-instant: 75ms;
+        --duration-fast: 150ms;
+        --duration-normal: 200ms;
+        --duration-slow: 300ms;
+        --duration-slower: 500ms;
+
+        /* ========================================
+       BREAKPOINTS (reference only)
+       ======================================== */
+        --screen-sm: 640px;
+        --screen-md: 768px;
+        --screen-lg: 1024px;
+        --screen-xl: 1280px;
+        --screen-2xl: 1536px;
+
+        /* ========================================
+       Z-INDEX SCALE
+       ======================================== */
+        --z-base: 0;
+        --z-raised: 10;
+        --z-floating: 20;
+        --z-modal: 30;
+        --z-overlay: 40;
+        --z-toast: 50;
+
+        /* ========================================
+       COMPONENT TOKENS
+       ======================================== */
+        /* Button */
+        --btn-height-sm: 32px;
+        --btn-height-md: 40px;
+        --btn-height-lg: 48px;
+
+        /* Input */
+        --input-height: 44px;
+        --input-border-width: 1.5px;
+
+        /* Card */
+        --card-padding: var(--space-4);
+        --card-radius: var(--radius-xl);
+
+        /* Navigation */
+        --nav-height: 64px;
+        --header-height: 56px;
+
+        /* Touch targets */
+        --touch-target-min: 44px;
+
+        /* ========================================
+       COACH CATEGORY COLORS
+       ======================================== */
+        --coach-health: #34A853;
+        --coach-health-light: #81C784;
+        --coach-wealth: #F9A825;
+        --coach-wealth-light: #FFD54F;
+        --coach-wisdom: #4285F4;
+        --coach-wisdom-light: #90CAF9;
+        --coach-career: #7B1FA2;
+        --coach-career-light: #BA68C8;
+        --coach-relationships: #E91E63;
+        --coach-relationships-light: #F48FB1;
+        --coach-creativity: #FF5722;
+        --coach-creativity-light: #FFAB91;
+
+        /* ========================================
+       MEMORY TIER COLORS
+       ======================================== */
+        --memory-hot: #D93025;
+        --memory-hot-bg: rgba(217, 48, 37, 0.1);
+        --memory-warm: #F9A825;
+        --memory-warm-bg: rgba(249, 168, 37, 0.1);
+        --memory-cold: #A89F91;
+        --memory-cold-bg: rgba(168, 159, 145, 0.15);
+
+        /* ========================================
+       PARA CATEGORY COLORS
+       ======================================== */
+        --para-project: #4285F4;
+        --para-area: #34A853;
+        --para-resource: #F9A825;
+        --para-archive: #A89F91;
+    }
+
+    /* ========================================
+     DARK MODE OVERRIDES
+     ======================================== */
+    [data-theme="dark"],
+    .dark {
+        --bg-primary: #1A1815;
+        --bg-secondary: #2A2722;
+        --bg-tertiary: #403B34;
+
+        --border-primary: var(--neutral-700);
+        --border-secondary: var(--neutral-600);
+
+        --text-primary: var(--neutral-50);
+        --text-secondary: var(--neutral-300);
+        --text-muted: var(--neutral-400);
+
+        --brand-primary: #4A9B7F;
+        --brand-secondary: #D4A574;
+
+        --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+        --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    }
+
+    /* ========================================
+     PREFERS REDUCED MOTION
+     ======================================== */
+    @media (prefers-reduced-motion: reduce) {
+        :root {
+            --duration-instant: 0ms;
+            --duration-fast: 0ms;
+            --duration-normal: 0ms;
+            --duration-slow: 0ms;
+            --duration-slower: 0ms;
+        }
+    }
+
+    /* ========================================
+     HIGH CONTRAST MODE
+     ======================================== */
+    @media (prefers-contrast: high) {
+        :root {
+            --brand-primary: #1A4030;
+            /* --text-muted: var(--neutral-500); */
+            /* Avoid conflict with Tailwind utilities if needed, but var usage is safe */
+            --text-muted: #7D7468;
+            /* --border-primary: var(--neutral-400); */
+            --border-primary: #A89F91;
+        }
+    }
+
+    body {
+        @apply font-body bg-neutral-50 text-neutral-800 antialiased;
+    }
 }
 
 #root {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-}
-
-a {
-    color: var(--color-primary);
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-button {
-    font-family: inherit;
-    cursor: pointer;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Utility Classes */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--space-4);
-}
-
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
 }
