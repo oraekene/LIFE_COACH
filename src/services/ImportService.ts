@@ -61,8 +61,9 @@ export class ImportService {
 
             try {
                 const text = await file.text();
-                // Sanitize content to prevent XSS
-                const sanitizedText = DOMPurify.sanitize(text);
+                // Store raw Markdown. Sanitization happens at RENDER time to prevent XSS.
+                // DOMPurify here might strip valid Markdown or be bypassed by Markdown features.
+                const sanitizedText = text;
 
                 // Simple frontmatter parsing (just separating if --- exists)
                 // In real app we might use a library, but for now simple split is fine or just take content

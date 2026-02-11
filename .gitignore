@@ -131,4 +131,7 @@ skills/
 .agent/
 design-system/
 life-coach-prd.json
-"LifeOS_Coach_Combined_PRD (2).md"
+LifeOS_Coach_Combined_PRD (2).md
+LifeOS_Coach_Combined_PRD*.md
+test_results*.txt
+security-report.md

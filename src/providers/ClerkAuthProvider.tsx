@@ -17,10 +17,12 @@ const CLERK_PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY || '';
 export function ClerkAuthProvider({ children }: ClerkAuthProviderProps) {
     if (!CLERK_PUBLISHABLE_KEY) {
         // Dev mode: skip Clerk if key not configured
-        console.warn(
-            '[ClerkAuthProvider] VITE_CLERK_PUBLISHABLE_KEY not set. ' +
-            'Running in dev mode without authentication.'
-        );
+        if (import.meta.env.DEV) {
+            console.warn(
+                '[ClerkAuthProvider] VITE_CLERK_PUBLISHABLE_KEY not set. ' +
+                'Running in dev mode without authentication.'
+            );
+        }
         return <>{children}</>;
     }
 

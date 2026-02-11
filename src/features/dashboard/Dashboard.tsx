@@ -11,9 +11,10 @@ import { ParaSidebar } from '../memory/ParaSidebar';
 import { SettingsPage } from '../settings/SettingsPage';
 import { Coach } from '../../types/Coach';
 import { useStorage } from '../../providers/StorageProvider';
+import { AdminDashboard } from '../admin/AdminDashboard';
 import './Dashboard.css';
 
-type DashboardTab = 'coaches' | 'chat' | 'profile';
+type DashboardTab = 'coaches' | 'chat' | 'profile' | 'admin';
 
 export function Dashboard() {
     const [activeTab, setActiveTab] = useState<DashboardTab>('coaches');
@@ -70,6 +71,16 @@ export function Dashboard() {
                             <span className="tab-text">Profile</span>
                         </button>
                     </li>
+                    <li>
+                        <button
+                            className={`nav__tab ${activeTab === 'admin' ? 'nav__tab--active' : ''}`}
+                            onClick={() => setActiveTab('admin')}
+                            data-testid="nav-admin"
+                        >
+                            <span className="tab-icon">🛠️</span>
+                            <span className="tab-text">Admin</span>
+                        </button>
+                    </li>
                 </ul>
 
                 <button className="nav__logout" onClick={handleLogout} data-testid="logout-btn">
@@ -102,6 +113,7 @@ export function Dashboard() {
                     )
                 )}
                 {activeTab === 'profile' && <SettingsPage />}
+                {activeTab === 'admin' && <AdminDashboard />}
             </main>
         </div>
     );

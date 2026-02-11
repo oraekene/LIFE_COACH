@@ -54,6 +54,29 @@ export function RegistrationFlow({ onAuthSuccess, onComplete }: RegistrationFlow
         return true;
     };
 
+    const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setEmail(e.target.value);
+        setEmailError(null);
+        setMagicLinkSent(false);
+    };
+
+    // Check for existing cooldown on mount
+    React.useEffect(() => {
+        const cooldownEnd = localStorage.getItem('magicLinkCooldownEnd');
+        if (cooldownEnd) {
+            const remaining = parseInt(cooldownEnd, 10) - Date.now();
+            if (remaining > 0) {
+                setMagicLinkCooldown(true);
+                setTimeout(() => {
+                    setMagicLinkCooldown(false);
+                    localStorage.removeItem('magicLinkCooldownEnd');
+                }, remaining);
+            } else {
+                localStorage.removeItem('magicLinkCooldownEnd');
+            }
+        }
+    }, []);
+
     const handleSendMagicLink = async () => {
         if (!validateEmail(email)) {
             return;
@@ -68,16 +91,18 @@ export function RegistrationFlow({ onAuthSuccess, onComplete }: RegistrationFlow
         const result = await sendMagicLink(email);
         if (result.success) {
             setMagicLinkSent(true);
-            // Start 30-second cooldown
-            setMagicLinkCooldown(true);
-            setTimeout(() => setMagicLinkCooldown(false), 30000);
-        }
-    };
 
-    const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setEmail(e.target.value);
-        setEmailError(null);
-        setMagicLinkSent(false);
+            // Start 30-second cooldown and persist it
+            setMagicLinkCooldown(true);
+            const cooldownDuration = 30000;
+            const cooldownEnd = Date.now() + cooldownDuration;
+            localStorage.setItem('magicLinkCooldownEnd', cooldownEnd.toString());
+
+            setTimeout(() => {
+                setMagicLinkCooldown(false);
+                localStorage.removeItem('magicLinkCooldownEnd');
+            }, cooldownDuration);
+        }
     };
 
     return (

@@ -1,4 +1,5 @@
 import { Project, ProjectStatus } from '../types';
+import DOMPurify from 'dompurify';
 
 export class ArchivalService {
     /**
@@ -24,8 +25,8 @@ export class ArchivalService {
      * @returns Suggestion string
      */
     generateSuggestion(project: Project): string {
-        // Simple sanitization to remove potential HTML tags
-        const safeName = project.name.replace(/[<>]/g, '');
+        // Robust sanitization to remove potential HTML tags
+        const safeName = DOMPurify.sanitize(project.name, { ALLOWED_TAGS: [] });
         return `Project '${safeName}' completed? Move to Archives?`;
     }
 

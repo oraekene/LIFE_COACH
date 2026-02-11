@@ -74,7 +74,7 @@ export class DatabaseService {
         // Mock implementation for now
         // In real impl: INSERT OR REPLACE INTO kv_store ...
         const payload = JSON.stringify(data);
-        console.log(`[DB] Saving to ${collection}/${id}:`, payload);
+        // console.log(`[DB] Saving to ${collection}/${id}:`, payload); // REMOVED FOR SECURITY
 
         // Simulating storage for test pass (since we mock DB in tests mostly or need a simple in-mem fallback)
         // actually, to make the TDD test pass *without* mocking the service *in the test*, 

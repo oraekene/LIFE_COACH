@@ -55,7 +55,7 @@ describe('Story 4.2: Automated Archival', () => {
         const maliciousProject = { ...mockProjects[0], name: '<script>alert(1)</script>pwned' };
         const suggestion = archivalService.generateSuggestion(maliciousProject);
         expect(suggestion).not.toContain('<script>');
-        expect(suggestion).toBe("Project 'scriptalert(1)/scriptpwned' completed? Move to Archives?");
+        expect(suggestion).toBe("Project 'pwned' completed? Move to Archives?");
     });
 
     it('should not identify recent projects as cold', async () => {
